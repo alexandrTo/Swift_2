@@ -12,6 +12,8 @@
 		CB913A1220B15BA6000025AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB913A1020B15BA6000025AD /* Main.storyboard */; };
 		CB913A1420B15BA7000025AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB913A1320B15BA7000025AD /* Assets.xcassets */; };
 		CB913A1720B15BA7000025AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB913A1520B15BA7000025AD /* LaunchScreen.storyboard */; };
+		CB913A2120B1B13E000025AD /* TableViewControllerFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB913A2020B1B13E000025AD /* TableViewControllerFriends.swift */; };
+		CB913A2320B1B76B000025AD /* TableViewCellFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB913A2220B1B76B000025AD /* TableViewCellFriend.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		CB913A1320B15BA7000025AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB913A1620B15BA7000025AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CB913A1820B15BA7000025AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB913A2020B1B13E000025AD /* TableViewControllerFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerFriends.swift; sourceTree = "<group>"; };
+		CB913A2220B1B76B000025AD /* TableViewCellFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellFriend.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				CB913A0C20B15BA6000025AD /* AppDelegate.swift */,
 				CB913A0E20B15BA6000025AD /* ViewController.swift */,
+				CB913A2220B1B76B000025AD /* TableViewCellFriend.swift */,
+				CB913A2020B1B13E000025AD /* TableViewControllerFriends.swift */,
 				CB913A1020B15BA6000025AD /* Main.storyboard */,
 				CB913A1320B15BA7000025AD /* Assets.xcassets */,
 				CB913A1520B15BA7000025AD /* LaunchScreen.storyboard */,
@@ -137,6 +143,8 @@
 			files = (
 				CB913A0F20B15BA6000025AD /* ViewController.swift in Sources */,
 				CB913A0D20B15BA6000025AD /* AppDelegate.swift in Sources */,
+				CB913A2120B1B13E000025AD /* TableViewControllerFriends.swift in Sources */,
+				CB913A2320B1B76B000025AD /* TableViewCellFriend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
