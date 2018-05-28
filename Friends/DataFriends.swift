@@ -12,5 +12,6 @@ class DataFriends {
     
     var arrayFriends = ["Johnny Depp", "Will Smith", "Leonardo Wilhelm DiCaprio"]
     var arrayPhoto = ["Джонни Депп", "Уил Смит", "Леонардо ДиКаприо"]
+    public var tok: String?
 
 }

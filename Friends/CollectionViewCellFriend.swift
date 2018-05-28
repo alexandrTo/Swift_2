@@ -11,10 +11,11 @@ import UIKit
 class CollectionViewCellFriend: UICollectionViewCell {
     
     @IBOutlet weak var imageFriend: UIImageView!
+    @IBOutlet weak var nameFriend: UILabel!
     
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        imageFriend.layer.cornerRadius = 10
-//        imageFriend.clipsToBounds = true
-//    }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        imageFriend.layer.cornerRadius = 10
+        imageFriend.clipsToBounds = true
+    }
 }

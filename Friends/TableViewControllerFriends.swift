@@ -13,8 +13,18 @@ class TableViewControllerFriends: UITableViewController {
     let data = DataFriends()
     
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
+        //test
+//        guard let token = data.tok else { return }
+//        let connect = Connection()
+//        connect.getFriends(token: token) { (data) in
+//            print(data)
+//        }
+        //test
+
     }
+    
+    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -28,8 +38,8 @@ class TableViewControllerFriends: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableViewCellFriend
         
-        cell.nameFriend!.text = data.arrayFriends[indexPath.row]
-        cell.imageFriend.image = UIImage(named: data.arrayPhoto[indexPath.row])
+//        cell.nameFriend!.text = data.arrayFriends[indexPath.row]
+//        cell.imageFriend.image = UIImage(named: data.arrayPhoto[indexPath.row])
         
         return cell
     }

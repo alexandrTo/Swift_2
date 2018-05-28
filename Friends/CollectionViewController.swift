@@ -36,6 +36,7 @@ class CollectionViewController: UICollectionViewController {
 
         if let indexRow = indexRow {
             cell.imageFriend.image = UIImage(named: (data?.arrayPhoto[indexRow])!)
+            cell.nameFriend.text = data?.arrayFriends[indexRow]
         }
         
         return cell
