@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CollectionViewCellFriend: UICollectionViewCell {
     
@@ -18,4 +19,13 @@ class CollectionViewCellFriend: UICollectionViewCell {
         imageFriend.layer.cornerRadius = 10
         imageFriend.clipsToBounds = true
     }
+    
+    func loadData(friend: Friends) {
+        nameFriend.text = friend.nameFriend
+        
+        if let imageURL = URL(string: friend.imageBig) {
+            imageFriend.kf.setImage(with: imageURL)
+        }
+    }
+    
 }

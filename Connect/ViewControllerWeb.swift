@@ -9,11 +9,11 @@
 import UIKit
 import WebKit
 
+public var currentToken = ""
+
 class ViewControllerWeb: UIViewController, WKNavigationDelegate {
     
     @IBOutlet weak var webView: WKWebView!
-    
-    var currentToken = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,26 +50,11 @@ class ViewControllerWeb: UIViewController, WKNavigationDelegate {
         
         if let token = params["access_token"] {
             currentToken = token
-            performSegue(withIdentifier: "segueToAPI", sender: nil)
-            //test
-            //performSegue(withIdentifier: "WebSegueToTabBar", sender: nil)
-            //test
+            performSegue(withIdentifier: "WebSegueToTabBar", sender: nil)
         }
         decisionHandler(.allow)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueToAPI" {
-            if let apiView = segue.destination as? APIViewController {
-                apiView.token = currentToken
-            }
-        }
-        //test
-        if segue.identifier == "WebSegueToTabBar" {
-            
-        }
-        //test
-    }
     
 }
 

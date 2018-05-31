@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A98004A87552F07561C5E27A /* Pods_Swift_2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 306DBC870E1E8E20145CF800 /* Pods_Swift_2.framework */; };
-		CB57668420B4A65200892B93 /* APIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB57668320B4A65200892B93 /* APIViewController.swift */; };
+		CB6B1F7F20BF315800122C8D /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1F7E20BF315800122C8D /* Friends.swift */; };
+		CB6B1F8120C00B7200122C8D /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1F8020C00B7200122C8D /* Api.swift */; };
+		CB6B1F8320C020ED00122C8D /* TableViewCellGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1F8220C020ED00122C8D /* TableViewCellGroup.swift */; };
+		CB6B1F8520C0229400122C8D /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1F8420C0229400122C8D /* Groups.swift */; };
 		CB913A0D20B15BA6000025AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB913A0C20B15BA6000025AD /* AppDelegate.swift */; };
 		CB913A0F20B15BA6000025AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB913A0E20B15BA6000025AD /* ViewController.swift */; };
 		CB913A1220B15BA6000025AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB913A1020B15BA6000025AD /* Main.storyboard */; };
@@ -18,7 +21,6 @@
 		CB913A2320B1B76B000025AD /* TableViewCellFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB913A2220B1B76B000025AD /* TableViewCellFriend.swift */; };
 		CB913A2520B2DD7C000025AD /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB913A2420B2DD7C000025AD /* CollectionViewController.swift */; };
 		CB913A2920B2E5C1000025AD /* CollectionViewCellFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB913A2820B2E5C1000025AD /* CollectionViewCellFriend.swift */; };
-		CB913A2B20B2EBBC000025AD /* DataFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB913A2A20B2EBBC000025AD /* DataFriends.swift */; };
 		CB913A2E20B31134000025AD /* TableViewControllerGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB913A2D20B31134000025AD /* TableViewControllerGroup.swift */; };
 		CB913A3120B44E2F000025AD /* ViewControllerWeb.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB913A3020B44E2F000025AD /* ViewControllerWeb.swift */; };
 		CB913A3420B451D4000025AD /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB913A3320B451D4000025AD /* Connection.swift */; };
@@ -28,7 +30,10 @@
 		0489ED75E035DB6A20A57D86 /* Pods-Swift_2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift_2/Pods-Swift_2.debug.xcconfig"; sourceTree = "<group>"; };
 		306DBC870E1E8E20145CF800 /* Pods_Swift_2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CEDEF8571AA94F89AB5B5C9 /* Pods-Swift_2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift_2.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift_2/Pods-Swift_2.release.xcconfig"; sourceTree = "<group>"; };
-		CB57668320B4A65200892B93 /* APIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIViewController.swift; sourceTree = "<group>"; };
+		CB6B1F7E20BF315800122C8D /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
+		CB6B1F8020C00B7200122C8D /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		CB6B1F8220C020ED00122C8D /* TableViewCellGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellGroup.swift; sourceTree = "<group>"; };
+		CB6B1F8420C0229400122C8D /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		CB913A0920B15BA6000025AD /* Swift_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB913A0C20B15BA6000025AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB913A0E20B15BA6000025AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,7 +45,6 @@
 		CB913A2220B1B76B000025AD /* TableViewCellFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellFriend.swift; sourceTree = "<group>"; };
 		CB913A2420B2DD7C000025AD /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		CB913A2820B2E5C1000025AD /* CollectionViewCellFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellFriend.swift; sourceTree = "<group>"; };
-		CB913A2A20B2EBBC000025AD /* DataFriends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFriends.swift; sourceTree = "<group>"; };
 		CB913A2D20B31134000025AD /* TableViewControllerGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerGroup.swift; sourceTree = "<group>"; };
 		CB913A3020B44E2F000025AD /* ViewControllerWeb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerWeb.swift; sourceTree = "<group>"; };
 		CB913A3320B451D4000025AD /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
@@ -75,19 +79,11 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		CB5766A520B6E6EE00892B93 /* test */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = test;
-			sourceTree = "<group>";
-		};
 		CB913A0020B15BA6000025AD = {
 			isa = PBXGroup;
 			children = (
-				CB5766A520B6E6EE00892B93 /* test */,
 				CB913A3220B44E38000025AD /* Connect */,
-				CB913A2F20B330C2000025AD /* Group */,
+				CB913A2F20B330C2000025AD /* Groups */,
 				CB913A2C20B310E3000025AD /* Friends */,
 				CB913A0B20B15BA6000025AD /* Swift_2 */,
 				CB913A0A20B15BA6000025AD /* Products */,
@@ -120,29 +116,31 @@
 		CB913A2C20B310E3000025AD /* Friends */ = {
 			isa = PBXGroup;
 			children = (
-				CB913A2420B2DD7C000025AD /* CollectionViewController.swift */,
-				CB913A2020B1B13E000025AD /* TableViewControllerFriends.swift */,
-				CB913A2820B2E5C1000025AD /* CollectionViewCellFriend.swift */,
+				CB6B1F7E20BF315800122C8D /* Friends.swift */,
 				CB913A2220B1B76B000025AD /* TableViewCellFriend.swift */,
-				CB913A2A20B2EBBC000025AD /* DataFriends.swift */,
+				CB913A2020B1B13E000025AD /* TableViewControllerFriends.swift */,
+				CB913A2420B2DD7C000025AD /* CollectionViewController.swift */,
+				CB913A2820B2E5C1000025AD /* CollectionViewCellFriend.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
 		};
-		CB913A2F20B330C2000025AD /* Group */ = {
+		CB913A2F20B330C2000025AD /* Groups */ = {
 			isa = PBXGroup;
 			children = (
+				CB6B1F8420C0229400122C8D /* Groups.swift */,
+				CB6B1F8220C020ED00122C8D /* TableViewCellGroup.swift */,
 				CB913A2D20B31134000025AD /* TableViewControllerGroup.swift */,
 			);
-			path = Group;
+			path = Groups;
 			sourceTree = "<group>";
 		};
 		CB913A3220B44E38000025AD /* Connect */ = {
 			isa = PBXGroup;
 			children = (
+				CB6B1F8020C00B7200122C8D /* Api.swift */,
 				CB913A3020B44E2F000025AD /* ViewControllerWeb.swift */,
 				CB913A3320B451D4000025AD /* Connection.swift */,
-				CB57668320B4A65200892B93 /* APIViewController.swift */,
 			);
 			path = Connect;
 			sourceTree = "<group>";
@@ -223,10 +221,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Swift_2/Pods-Swift_2-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,15 +261,17 @@
 			files = (
 				CB913A0F20B15BA6000025AD /* ViewController.swift in Sources */,
 				CB913A0D20B15BA6000025AD /* AppDelegate.swift in Sources */,
-				CB913A2B20B2EBBC000025AD /* DataFriends.swift in Sources */,
+				CB6B1F7F20BF315800122C8D /* Friends.swift in Sources */,
 				CB913A2920B2E5C1000025AD /* CollectionViewCellFriend.swift in Sources */,
 				CB913A2120B1B13E000025AD /* TableViewControllerFriends.swift in Sources */,
+				CB6B1F8120C00B7200122C8D /* Api.swift in Sources */,
+				CB6B1F8520C0229400122C8D /* Groups.swift in Sources */,
 				CB913A3120B44E2F000025AD /* ViewControllerWeb.swift in Sources */,
 				CB913A2E20B31134000025AD /* TableViewControllerGroup.swift in Sources */,
 				CB913A3420B451D4000025AD /* Connection.swift in Sources */,
 				CB913A2320B1B76B000025AD /* TableViewCellFriend.swift in Sources */,
 				CB913A2520B2DD7C000025AD /* CollectionViewController.swift in Sources */,
-				CB57668420B4A65200892B93 /* APIViewController.swift in Sources */,
+				CB6B1F8320C020ED00122C8D /* TableViewCellGroup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

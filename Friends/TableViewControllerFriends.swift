@@ -10,20 +10,22 @@ import UIKit
 
 class TableViewControllerFriends: UITableViewController {
     
-    let data = DataFriends()
+    var friends = [Friends]()
+    var indexRow = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //test
-//        guard let token = data.tok else { return }
-//        let connect = Connection()
-//        connect.getFriends(token: token) { (data) in
-//            print(data)
-//        }
-        //test
-
+        
+        let api = Api()
+        
+        api.getFriends { (friends) in
+            self.friends = friends
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
     }
-    
     
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -31,32 +33,28 @@ class TableViewControllerFriends: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.arrayFriends.count
+        return friends.count
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TableViewCellFriend
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellFriend", for: indexPath) as! TableViewCellFriend
         
-//        cell.nameFriend!.text = data.arrayFriends[indexPath.row]
-//        cell.imageFriend.image = UIImage(named: data.arrayPhoto[indexPath.row])
+        let friend = friends[indexPath.row]
+        cell.loadData(friend: friend)
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        indexRow = indexPath.row
         performSegue(withIdentifier: "segueToCollection", sender: nil)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let indexPath = tableView.indexPathForSelectedRow?.row
-        
-        if segue.identifier == "segueToCollection" {
-            if let collView = segue.destination as? CollectionViewController {
-                collView.indexRow = indexPath
-                collView.data = data
-            }
+        if let collectionView = segue.destination as? CollectionViewController {
+            collectionView.friend = friends[indexRow]
         }
     }
     

@@ -12,8 +12,7 @@ let reuseIdentifier = "myCell"
 
 class CollectionViewController: UICollectionViewController {
 
-    var indexRow: Int?
-    var data: DataFriends?
+    var friend: Friends!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +32,7 @@ class CollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! CollectionViewCellFriend
-
-        if let indexRow = indexRow {
-            cell.imageFriend.image = UIImage(named: (data?.arrayPhoto[indexRow])!)
-            cell.nameFriend.text = data?.arrayFriends[indexRow]
-        }
+        cell.loadData(friend: friend)
         
         return cell
     }

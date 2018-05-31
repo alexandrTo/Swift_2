@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class TableViewCellFriend: UITableViewCell {
     
@@ -17,6 +18,14 @@ class TableViewCellFriend: UITableViewCell {
         super.awakeFromNib()
         imageFriend.layer.cornerRadius = 30
         imageFriend.clipsToBounds = true
+    }
+    
+    func loadData(friend: Friends) {
+        nameFriend.text = friend.nameFriend
+        
+        if let imageURL = URL(string: friend.imageFriend) {
+            imageFriend.kf.setImage(with: imageURL)
+        }
     }
 
 
