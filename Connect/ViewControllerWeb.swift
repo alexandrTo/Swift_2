@@ -9,20 +9,16 @@
 import UIKit
 import WebKit
 
-public var currentToken = ""
-
 class ViewControllerWeb: UIViewController, WKNavigationDelegate {
     
     @IBOutlet weak var webView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         webView.navigationDelegate = self
         
-        let newConnect = Connection()
-        
-        if let request = newConnect.oauthSession() {
+        let connection = Connection()
+        if let request = connection.oauthSession() {
             webView.load(request)
         }
     }
@@ -49,7 +45,7 @@ class ViewControllerWeb: UIViewController, WKNavigationDelegate {
         }
         
         if let token = params["access_token"] {
-            currentToken = token
+            Api.token = token.self
             performSegue(withIdentifier: "WebSegueToTabBar", sender: nil)
         }
         decisionHandler(.allow)

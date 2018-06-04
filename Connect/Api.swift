@@ -8,11 +8,17 @@
 
 import Foundation
 import SwiftyJSON
+import RealmSwift
 
 class Api {
     
-    func getFriends(result: @escaping ([Friends]) -> Void) {
-        guard let url = URL(string: "https://api.vk.com/method/friends.get?access_token=\(currentToken)&fields=photo_100,photo_200_orig&version=5.74&") else { return }
+    let baseUrl = "https://api.vk.com/method/"
+    static var token = ""
+    
+    func getData(method: String, param: String, result: @escaping ([Any]) -> Void) {
+        
+        guard let url = URL(string: "\(baseUrl)\(method)?access_token=\(Api.token)\(param)&version=5.74&") else { return }
+        
         let session = URLSession.shared
         
         session.dataTask(with: url) { (data, response, error) in
@@ -24,69 +30,76 @@ class Api {
             guard let data = data else { return }
             
             let json = JSON(data)
-            let friends = json["response"].map{ Friends(json: $0.1) }
-            DispatchQueue.main.async {
-                result(friends)
+            
+            var arrayObj: [Any] = []
+            let response = json["response"]
+            
+            switch method {
+            case "friends.get":
+                arrayObj = response.map { Friends(json: $0.1) }
+                DispatchQueue.main.async {
+                    result(arrayObj)
+                    self.saveFriendsData(arrayObj as! [Friends])
+                }
+                
+            case "groups.get":
+                arrayObj = response.map { Groups(json: $0.1) }
+                DispatchQueue.main.async {
+                    result(arrayObj)
+                    self.saveGroupsData(arrayObj as! [Groups])
+                }
+                
+            case "groups.search":
+                arrayObj = response.map { Groups(json: $0.1) }
+                
+            case "photos.get":
+                arrayObj = response.map { Photos(json: $0.1) }
+                DispatchQueue.main.async {
+                    result(arrayObj)
+                    self.savePhotosData(arrayObj as! [Photos])
+                }
+                
+            default:
+                break
             }
             }.resume()
     }
     
-    
-    func getPhotos(result: @escaping (_ json: JSON) -> Void) {
-        guard let url = URL(string: "https://api.vk.com/method/photos.get?access_token=\(currentToken)&album_id=profile&version=5.74&") else { return }
-        let session = URLSession.shared
+    func saveFriendsData(_ friends: [Friends]) {
+        let realm = try! Realm()
         
-        session.dataTask(with: url) { (data, response, error) in
-            if let error = error {
-                print(error)
-                return
+        do {
+            try realm.write {
+                realm.add(friends)
+                print(Realm.Configuration.defaultConfiguration.fileURL!)
             }
-            
-            guard let data = data else { return }
-            
-            let json = JSON(data)
-            result(json)
-            
-            }.resume()
+        } catch {
+            print(error)
+        }
     }
     
-    func getGroups(result: @escaping ([Groups]) -> Void) {
-        guard let url = URL(string: "https://api.vk.com/method/groups.get?access_token=\(currentToken)&extended=1&version=5.74&") else { return }
-        let session = URLSession.shared
+    func saveGroupsData(_ groups: [Groups]) {
+        let realm = try! Realm()
         
-        session.dataTask(with: url) { (data, response, error) in
-            if let error = error {
-                print(error)
-                return
+        do {
+            try realm.write {
+                realm.add(groups)
             }
-            
-            guard let data = data else { return }
-            
-            let json = JSON(data)
-            let groups = json["response"].map{ Groups(json: $0.1) }
-            DispatchQueue.main.async {
-                result(groups)
-            }
-            }.resume()
+        } catch {
+            print(error)
+        }
     }
     
-    func searchGroups(srch: String, _ result: @escaping (_ json: JSON) -> Void) {
-        guard let url = URL(string: "https://api.vk.com/method/groups.search?access_token=\(currentToken)&q=\(srch)&type=group&version=5.74&") else { return }
-        let session = URLSession.shared
+    func savePhotosData(_ photos: [Photos]) {
+        let realm = try! Realm()
         
-        session.dataTask(with: url) { (data, response, error) in
-            if let error = error {
-                print(error)
-                return
+        do {
+            try realm.write {
+                realm.add(photos)
             }
-            
-            guard let data = data else { return }
-            
-            let json = JSON(data)
-            result(json)
-            
-            }.resume()
+        } catch {
+            print(error)
+        }
     }
-    
     
 }

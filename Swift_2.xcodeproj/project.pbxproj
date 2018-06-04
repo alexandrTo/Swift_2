@@ -12,6 +12,10 @@
 		CB6B1F8120C00B7200122C8D /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1F8020C00B7200122C8D /* Api.swift */; };
 		CB6B1F8320C020ED00122C8D /* TableViewCellGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1F8220C020ED00122C8D /* TableViewCellGroup.swift */; };
 		CB6B1F8520C0229400122C8D /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1F8420C0229400122C8D /* Groups.swift */; };
+		CB6B1F8820C05B4000122C8D /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1F8720C05B4000122C8D /* Photos.swift */; };
+		CB6B1F8A20C06CA500122C8D /* ViewControllerPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1F8920C06CA500122C8D /* ViewControllerPhoto.swift */; };
+		CB6B1F8C20C2C3A200122C8D /* TableViewControllerSearchGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1F8B20C2C3A200122C8D /* TableViewControllerSearchGroup.swift */; };
+		CB6B1F8E20C2D0F400122C8D /* TableViewCellSearchGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6B1F8D20C2D0F400122C8D /* TableViewCellSearchGroup.swift */; };
 		CB913A0D20B15BA6000025AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB913A0C20B15BA6000025AD /* AppDelegate.swift */; };
 		CB913A0F20B15BA6000025AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB913A0E20B15BA6000025AD /* ViewController.swift */; };
 		CB913A1220B15BA6000025AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB913A1020B15BA6000025AD /* Main.storyboard */; };
@@ -34,6 +38,10 @@
 		CB6B1F8020C00B7200122C8D /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		CB6B1F8220C020ED00122C8D /* TableViewCellGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellGroup.swift; sourceTree = "<group>"; };
 		CB6B1F8420C0229400122C8D /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
+		CB6B1F8720C05B4000122C8D /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		CB6B1F8920C06CA500122C8D /* ViewControllerPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPhoto.swift; sourceTree = "<group>"; };
+		CB6B1F8B20C2C3A200122C8D /* TableViewControllerSearchGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerSearchGroup.swift; sourceTree = "<group>"; };
+		CB6B1F8D20C2D0F400122C8D /* TableViewCellSearchGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellSearchGroup.swift; sourceTree = "<group>"; };
 		CB913A0920B15BA6000025AD /* Swift_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB913A0C20B15BA6000025AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB913A0E20B15BA6000025AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,9 +87,31 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CB6B1F8620C05A4B00122C8D /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				CB6B1F8920C06CA500122C8D /* ViewControllerPhoto.swift */,
+				CB6B1F8720C05B4000122C8D /* Photos.swift */,
+				CB913A2820B2E5C1000025AD /* CollectionViewCellFriend.swift */,
+				CB913A2420B2DD7C000025AD /* CollectionViewController.swift */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		CB6B1F8F20C2E46800122C8D /* GroupSearch */ = {
+			isa = PBXGroup;
+			children = (
+				CB6B1F8B20C2C3A200122C8D /* TableViewControllerSearchGroup.swift */,
+				CB6B1F8D20C2D0F400122C8D /* TableViewCellSearchGroup.swift */,
+			);
+			path = GroupSearch;
+			sourceTree = "<group>";
+		};
 		CB913A0020B15BA6000025AD = {
 			isa = PBXGroup;
 			children = (
+				CB6B1F8F20C2E46800122C8D /* GroupSearch */,
+				CB6B1F8620C05A4B00122C8D /* Photos */,
 				CB913A3220B44E38000025AD /* Connect */,
 				CB913A2F20B330C2000025AD /* Groups */,
 				CB913A2C20B310E3000025AD /* Friends */,
@@ -119,8 +149,6 @@
 				CB6B1F7E20BF315800122C8D /* Friends.swift */,
 				CB913A2220B1B76B000025AD /* TableViewCellFriend.swift */,
 				CB913A2020B1B13E000025AD /* TableViewControllerFriends.swift */,
-				CB913A2420B2DD7C000025AD /* CollectionViewController.swift */,
-				CB913A2820B2E5C1000025AD /* CollectionViewCellFriend.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -222,11 +250,15 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Swift_2/Pods-Swift_2-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,11 +295,15 @@
 				CB913A0D20B15BA6000025AD /* AppDelegate.swift in Sources */,
 				CB6B1F7F20BF315800122C8D /* Friends.swift in Sources */,
 				CB913A2920B2E5C1000025AD /* CollectionViewCellFriend.swift in Sources */,
+				CB6B1F8A20C06CA500122C8D /* ViewControllerPhoto.swift in Sources */,
 				CB913A2120B1B13E000025AD /* TableViewControllerFriends.swift in Sources */,
 				CB6B1F8120C00B7200122C8D /* Api.swift in Sources */,
+				CB6B1F8820C05B4000122C8D /* Photos.swift in Sources */,
 				CB6B1F8520C0229400122C8D /* Groups.swift in Sources */,
+				CB6B1F8C20C2C3A200122C8D /* TableViewControllerSearchGroup.swift in Sources */,
 				CB913A3120B44E2F000025AD /* ViewControllerWeb.swift in Sources */,
 				CB913A2E20B31134000025AD /* TableViewControllerGroup.swift in Sources */,
+				CB6B1F8E20C2D0F400122C8D /* TableViewCellSearchGroup.swift in Sources */,
 				CB913A3420B451D4000025AD /* Connection.swift in Sources */,
 				CB913A2320B1B76B000025AD /* TableViewCellFriend.swift in Sources */,
 				CB913A2520B2DD7C000025AD /* CollectionViewController.swift in Sources */,

@@ -17,12 +17,12 @@ class TableViewControllerFriends: UITableViewController {
         super.viewDidLoad()
         
         let api = Api()
-        
-        api.getFriends { (friends) in
-            self.friends = friends
+        api.getData(method: "friends.get", param: "&fields=photo_100,photo_200_orig") { (friends) in
+            self.friends = friends as! [Friends]
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+
         }
         
     }

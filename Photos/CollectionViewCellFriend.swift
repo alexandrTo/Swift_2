@@ -12,18 +12,16 @@ import Kingfisher
 class CollectionViewCellFriend: UICollectionViewCell {
     
     @IBOutlet weak var imageFriend: UIImageView!
-    @IBOutlet weak var nameFriend: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        imageFriend.layer.cornerRadius = 10
+        imageFriend.layer.cornerRadius = 5
         imageFriend.clipsToBounds = true
     }
     
-    func loadData(friend: Friends) {
-        nameFriend.text = friend.nameFriend
+    func loadData(photo: Photos) {
         
-        if let imageURL = URL(string: friend.imageBig) {
+        if let imageURL = URL(string: photo.src_big) {
             imageFriend.kf.setImage(with: imageURL)
         }
     }

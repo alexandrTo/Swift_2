@@ -16,8 +16,8 @@ class TableViewControllerGroup: UITableViewController {
         super.viewDidLoad()
         
         let api = Api()
-        api.getGroups { (groups) in
-            self.groups = groups
+        api.getData(method: "groups.get", param: "&extended=1") { (groups) in
+            self.groups = groups as! [Groups]
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
