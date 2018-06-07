@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class TableViewControllerFriends: UITableViewController {
     
@@ -15,17 +16,30 @@ class TableViewControllerFriends: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadFriendsApi()
+    }
+    
+    
+    func loadFriendsApi() {
         let api = Api()
-        api.getData(method: "friends.get", param: "&fields=photo_100,photo_200_orig") { (friends) in
-            self.friends = friends as! [Friends]
+        api.getFriends { (error) in
+            if let error = error {
+                print(error)
+                return
+            }
             DispatchQueue.main.async {
+                self.loadFriendsRealm()
                 self.tableView.reloadData()
             }
-
         }
-        
     }
+    
+    func loadFriendsRealm() {
+        let realm = try! Realm()
+        let friends = realm.objects(Friends.self)
+        self.friends = Array(friends)
+    }
+    
     
     
     override func numberOfSections(in tableView: UITableView) -> Int {

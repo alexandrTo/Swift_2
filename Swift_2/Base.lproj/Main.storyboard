@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kgo-gX-LoE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kgo-gX-LoE">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -193,6 +193,7 @@
                                         <constraint firstItem="8kZ-lb-aQs" firstAttribute="centerY" secondItem="VTs-4P-Bzw" secondAttribute="centerY" id="AOo-br-bVI"/>
                                         <constraint firstAttribute="bottom" secondItem="czF-4c-53m" secondAttribute="bottom" constant="9" id="Jtj-UG-ygJ"/>
                                         <constraint firstAttribute="bottom" secondItem="8kZ-lb-aQs" secondAttribute="bottom" constant="10.5" id="d01-OS-31S"/>
+                                        <constraint firstItem="czF-4c-53m" firstAttribute="top" secondItem="VTs-4P-Bzw" secondAttribute="top" constant="11.5" id="jFo-FG-3WR"/>
                                         <constraint firstItem="8kZ-lb-aQs" firstAttribute="leading" secondItem="czF-4c-53m" secondAttribute="trailing" constant="8" id="owX-cn-7t1"/>
                                         <constraint firstItem="czF-4c-53m" firstAttribute="leading" secondItem="VTs-4P-Bzw" secondAttribute="leading" constant="16" id="q3r-ja-yNa"/>
                                     </constraints>
@@ -281,6 +282,7 @@
                                         <constraint firstAttribute="bottom" secondItem="wae-J2-ceh" secondAttribute="bottom" constant="10.5" id="erD-nL-pag"/>
                                         <constraint firstItem="10O-w6-Vqj" firstAttribute="centerY" secondItem="Ttq-WO-ZEE" secondAttribute="centerY" id="hj2-4b-2ve"/>
                                         <constraint firstAttribute="bottom" secondItem="10O-w6-Vqj" secondAttribute="bottom" constant="10.5" id="kGd-Qr-ewR"/>
+                                        <constraint firstItem="wae-J2-ceh" firstAttribute="top" secondItem="Ttq-WO-ZEE" secondAttribute="top" constant="10" id="xGq-Nf-MQl"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -334,6 +336,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="BTG-bh-wsN" firstAttribute="leading" secondItem="GuK-lV-hPF" secondAttribute="leading" constant="16" id="4X9-kw-lr7"/>
+                                        <constraint firstItem="BTG-bh-wsN" firstAttribute="top" secondItem="GuK-lV-hPF" secondAttribute="top" constant="11" id="5Ek-Q2-jXB"/>
                                         <constraint firstAttribute="bottom" secondItem="vhp-0z-ykb" secondAttribute="bottom" constant="29.5" id="Nyb-wY-guW"/>
                                         <constraint firstAttribute="bottom" secondItem="BTG-bh-wsN" secondAttribute="bottom" constant="9.5" id="h1P-9P-HFC"/>
                                         <constraint firstItem="vhp-0z-ykb" firstAttribute="leading" secondItem="BTG-bh-wsN" secondAttribute="trailing" constant="7" id="lJj-mo-bs2"/>

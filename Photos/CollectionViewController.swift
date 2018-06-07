@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 let reuseIdentifier = "myCell"
 
@@ -18,15 +19,23 @@ class CollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadPhotosApi()
+    }
+    
+    func loadPhotosApi() {
         let api = Api()
-        api.getData(method: "photos.get", param: "&album_id=profile&owner_id=\(friend.user_id)") { (photos) in
-            self.photos = photos as! [Photos]
+        api.getPhotos(user_id: friend.user_id) { (data, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            if let photos = data {
+                self.photos = photos as! [Photos]
+            }
             DispatchQueue.main.async {
                 self.collectionView?.reloadData()
             }
         }
-        
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {

@@ -16,19 +16,19 @@ class Groups: Object {
     @objc dynamic var name = ""
     @objc dynamic var screen_name = ""
     @objc dynamic var photo = ""
-    @objc dynamic var gid = 0
+    @objc dynamic var gid = Int()
     @objc dynamic var photo_big = ""
     @objc dynamic var type = ""
     
     convenience init(json: JSON) {
         self.init()
-        self.photo_medium = json["photo_medium"].stringValue
-        self.name = json["name"].stringValue
-        self.screen_name = json["screen_name"].stringValue
-        self.photo = json["photo"].stringValue
-        self.gid = json["gid"].intValue
-        self.photo_big = json["photo_big"].stringValue
-        self.type = json["type"].stringValue
+            self.photo_medium = json["photo_medium"].stringValue
+            self.name = json["name"].stringValue
+            self.screen_name = json["screen_name"].stringValue
+            self.photo = json["photo"].stringValue
+            self.gid = json["gid"].intValue
+            self.photo_big = json["photo_big"].stringValue
+            self.type = json["type"].stringValue
     }
     
 }

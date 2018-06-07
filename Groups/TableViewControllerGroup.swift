@@ -7,29 +7,42 @@
 //
 
 import UIKit
+import RealmSwift
 
 class TableViewControllerGroup: UITableViewController {
     
     var groups = [Groups]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadGroupsApi()        
+    }
+    
+    func loadGroupsApi() {
         let api = Api()
-        api.getData(method: "groups.get", param: "&extended=1") { (groups) in
-            self.groups = groups as! [Groups]
+        api.getGroups { (error) in
+            if let error = error {
+                print(error)
+                return
+            }
             DispatchQueue.main.async {
+                self.loadGroupsRealm()
                 self.tableView.reloadData()
             }
         }
-
     }
-
-
+    
+    func loadGroupsRealm() {
+        let realm = try! Realm()
+        let groups = realm.objects(Groups.self)
+        self.groups = Array(groups)
+    }
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return groups.count
     }
@@ -38,9 +51,8 @@ class TableViewControllerGroup: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellGroup", for: indexPath) as! TableViewCellGroup
         
         let group = groups[indexPath.row]
-        cell.loadData(group: group)
-        
+            cell.loadData(group: group)
         return cell
     }
-
+    
 }

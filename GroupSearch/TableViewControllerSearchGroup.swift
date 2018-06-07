@@ -24,13 +24,7 @@ class TableViewControllerSearchGroup: UITableViewController, UISearchBarDelegate
     //    }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        let api = Api()
-        api.getData(method: "groups.search", param: "&q=\(searchBar.text!)&type=group") { (foundGroups) in
-            self.groups = foundGroups as! [Groups]
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+        loadSeapchGroupsApi()
     }
     
     //    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -43,7 +37,22 @@ class TableViewControllerSearchGroup: UITableViewController, UISearchBarDelegate
     //        tableView.delegate = self
     //        tableView.dataSource = self
         searchBar.delegate = self
-        
+    }
+    
+    func loadSeapchGroupsApi() {
+        let api = Api()
+        api.searchGroups(searchText: searchBar.text!) { (data, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            if let groups = data {
+                self.groups = groups as! [Groups]
+            }
+            DispatchQueue.main.async {
+                self.tableView?.reloadData()
+            }
+        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {

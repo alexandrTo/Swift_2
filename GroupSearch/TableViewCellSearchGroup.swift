@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 class TableViewCellSearchGroup: UITableViewCell {
-
+    
     @IBOutlet weak var groupTextField: UILabel!
     @IBOutlet weak var imageSearchGroup: UIImageView!
     
@@ -19,12 +19,15 @@ class TableViewCellSearchGroup: UITableViewCell {
         imageSearchGroup.layer.cornerRadius = 30
         imageSearchGroup.clipsToBounds = true
     }
-
+    
     func loadData(group: Groups) {
         groupTextField.text = group.name
         if let imageURL = URL(string: group.photo_medium) {
-            imageSearchGroup.kf.setImage(with: imageURL)
+            DispatchQueue.main.async {
+                self.imageSearchGroup.kf.setImage(with: imageURL)
+            }
+            
         }
     }
-
+    
 }
